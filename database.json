@@ -1,0 +1,9 @@
+{
+    "dev": {
+      "driver": "pg",
+      "user": "postgres",
+      "password": "bartertest",
+      "host": "185.146.3.29",
+      "database": "postgres"
+    }
+  }
