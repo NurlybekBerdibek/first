@@ -55,6 +55,12 @@ const Review = sequelize.define('review', {
     created_at: {type: DataTypes.DATE}
 })
 
+const Chat = sequelize.define('chat', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    chatName: {type: DataTypes.STRING, trim: true},
+    latestMessage: {type: DataTypes.INTEGER},
+    user_id: {type: DataTypes.STRING}
+})
 
 User.hasMany(Offer, { foreignKey: 'username' });
 Offer.belongsTo(User);
@@ -75,7 +81,8 @@ module.exports = {
     Category, 
     Post,
     Profile,
-    Review
+    Review,
+    Chat
 }
 
 
