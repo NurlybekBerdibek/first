@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:16.15.1
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -16,4 +16,4 @@ RUN npm install
 COPY . .
 
 EXPOSE 8080
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "run" ]
