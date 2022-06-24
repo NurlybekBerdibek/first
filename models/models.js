@@ -38,13 +38,6 @@ const Post = sequelize.define('post', {
     posted_by: {type: DataTypes.STRING}
 })
 
-const Profile = sequelize.define('profile', {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    username: {type: DataTypes.STRING},
-    background_pic: {type: DataTypes.STRING},
-    rating: {type: DataTypes.INTEGER, defaultValue: 0}, 
-    description: {type: DataTypes.STRING}
-})
 
 const Review = sequelize.define('review', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -57,7 +50,7 @@ const Review = sequelize.define('review', {
 
 const Chat = sequelize.define('chat', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    chatName: {type: DataTypes.STRING, trim: true},
+    chatName: {type: DataTypes.STRING},
     latestMessage: {type: DataTypes.INTEGER},
     user_id: {type: DataTypes.STRING}
 })
@@ -71,8 +64,6 @@ Category.hasMany(Offer);
 Offer.belongsTo(Post);
 Post.hasMany(Offer);
 
-User.hasMany(Profile, { foreignKey: 'username' });
-Profile.belongsTo(User)
 
 
 module.exports = {
@@ -80,7 +71,7 @@ module.exports = {
     Offer,
     Category, 
     Post,
-    Profile,
+    
     Review,
     Chat
 }
